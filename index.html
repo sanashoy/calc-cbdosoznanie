@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Калькулятор дозировки КБД</title>
+  </head>
+  <body>
+    <div class="container mt-5 mb-2 pt-3">
+      <div class="row">
+        <div class="col-md-3 px-4 block">
+          <h2 class="header">Что это такое?</h2>
+          <p>
+            Это калькулятор дозировки CBD. Вам нужно указать свой возраст, вес,
+            выбрать недуг из списка, указать дозировку КБД на вашем флакончике и
+            опыт употребления КБД. Калькулятор рассчитает рекомендуемую
+            дозировку в зависимости от введённых вами значений :)
+          </p>
+        </div>
+
+        <div class="col-md-6 p-4 calc block">
+          <div class="container">
+            <div class="calc-head">
+              <h3 class="calc-header">Калькулятор дозировки КБД</h3>
+              <img class="logo" src="logo.png" />
+            </div>
+            <form id="form" class="needs-validation" novalidate>
+                <div>
+                  <label for="age">Возраст</label>
+                  <input type="text" inputmode="numeric" maxlength="3" required name="age" id="age">
+                  <div class="invalid-feedback">Пожалуйста, укажите корректный возраст</div>
+                </div>
+                <div>
+                  <label for="weight">Вес (кг)</label>
+                  <input type="text" inputmode="numeric" maxlength="3" required name="weight" id="weight">
+                  <div class="invalid-feedback">Пожалуйста, укажите корректный вес</div>
+                </div>
+                <div>
+                  <label for="issue-input">Выберите свой недуг:</label>
+                  <select required id="issue-input" class="form-select form-select-sm" data-bs-toggle="modal" data-bs-target="#issues-modal">
+                      <option selected hidden></option>
+                      <option value="0" hidden>Выбрано несколько недугов</option>
+                      <option value="1" hidden>укрепление организма/профилактика</option>
+                      <option value="2" hidden>восстановление после тренировок</option>
+                      <option value="3" hidden>улучшение качества сна</option>
+                      <option value="4" hidden>перепады настроения</option>
+                      <option value="5" hidden>стресс и беспокойство</option>
+                      <option value="6" hidden>предменструальный синдром (ПМС)</option>
+                      <option value="7" hidden>нервозность</option>
+                      <option value="8" hidden>бессонница</option>
+                      <option value="9" hidden>тошнота</option>
+                      <option value="10" hidden>потеря веса</option>
+                      <option value="11" hidden>мигрень и другие типы головной боли</option>
+                      <option value="12" hidden>климактерические симптомы</option>
+                      <option value="13" hidden>метаболические расстройства</option>
+                      <option value="14" hidden>хроническая боль</option>
+                      <option value="15" hidden>воспаления</option>
+                      <option value="16" hidden>высокое кровяное давление</option>
+                      <option value="17" hidden>аутоиммунные расстройства</option>
+                      <option value="18" hidden>депрессия</option>
+                      <option value="19" hidden>СРК (синдром раздраженного кишечника)</option>
+                      <option value="20" hidden>колит</option>
+                      <option value="21" hidden>воспалительное заболевание кишечника</option>
+                      <option value="22" hidden>заболевания печени</option>
+                      <option value="23" hidden>ПТСР (посттравматическое стрессовое расстройство)</option>
+                      <option value="24" hidden>болезнь Лайма</option>
+                      <option value="25" hidden>фибромиалгия</option>
+                      <option value="26" hidden>ревматоидный артрит</option>
+                      <option value="27" hidden>рассеянный склероз</option>
+                      <option value="28" hidden>аутизм</option>
+                      <option value="29" hidden>болезнь Крона</option>
+                      <option value="30" hidden>онкология</option>
+                      <option value="31" hidden>эпилепсия</option>
+                      <option value="32" hidden>болезнь Паркинсона</option>
+                      <option value="33" hidden>болезнь Альцгеймера</option>
+                  </select>
+                  <div class="invalid-feedback">Пожалуйста, выберите хотя бы один недуг</div>
+                </div>
+                <div>
+                  <label for="dose-input">Выберите дозировку КБД масла:</label>
+                  <select required id="dose-input" class="form-select form-select-sm">
+                      <option selected hidden></option>
+                      <option value="1">5%</option>
+                      <option value="2">10%</option>
+                      <option value="3">20%</option>
+                      <option value="4">30%</option>
+                      <option value="5">40%</option>
+                  </select>
+                  <div class="invalid-feedback">Пожалуйста, выберите дозировку</div>
+                </div>
+                <div>
+                  <label for="exp">Какой опыт употребления?</label>
+                  <select required id="expirience" class="form-select form-select-sm">
+                    <option selected hidden></option>
+                    <option value="1">Хочу попробовать впервые</option>
+                    <option value="2">Принимаю менее 3-х месяцев</option>
+                    <option value="3">Принимаю более 3-х месяцев</option>
+                </select>
+                <div class="invalid-feedback">Пожалуйста, укажите одно из предложенных значений</div>
+                </div>
+                <input type="submit" value="РАССЧИТАТЬ ДОЗИРОВКУ" class="calc-button">
+                <br>
+                <div id="result" hidden>
+                    <h4>Рекомендуемая дозировка:</h4>
+                    <p></p>
+                    <p>Для вас будет достаточно <strong id="dose">0</strong><strong> мг</strong> в сутки</p>
+                    <p>Количество капель в сутки - <strong id="amount">0</strong></p>
+                    <p></p>
+                    <p>Поместите масло под язык и удерживайте 30-60 секунд, затем проглотите. Главное не касайтесь пипеткой языка, чтобы во внутрь флакончика ничего лишнего не попало :)</p>
+                </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3 px-4 block">
+          <h2 class="header">Кто мы?</h2>
+          <p>
+            Мы производитель КБД масла и нам хочется чтобы оно было доступнее!
+            Переходите в наш телеграм канал у нас там весело - <a href="https://t.me/sup_cbd" class="href">тык (●'◡'●)</a>
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal" tabindex="-1" id="issues-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="container">
+              <div class="form">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="1" id="issue-1">
+                      <label class="form-check-label" for="issue-1">укрепление организма/профилактика</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="2" id="issue-2">
+                      <label class="form-check-label" for="issue-2">восстановление после тренировок</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="3" id="issue-3">
+                      <label class="form-check-label" for="issue-3">улучшение качества сна</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="4" id="issue-4">
+                      <label class="form-check-label" for="issue-4">перепады настроения</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="5" id="issue-5">
+                      <label class="form-check-label" for="issue-5">стресс и беспокойство</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="6" id="issue-6">
+                      <label class="form-check-label" for="issue-6">предменструальный синдром (ПМС)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="7" id="issue-7">
+                      <label class="form-check-label" for="issue-7">нервозность</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="8" id="issue-8">
+                      <label class="form-check-label" for="issue-8">бессонница</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="9" id="issue-9">
+                      <label class="form-check-label" for="issue-9">тошнота</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="10" id="issue-10">
+                      <label class="form-check-label" for="issue-10">потеря веса</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="11" id="issue-11">
+                      <label class="form-check-label" for="issue-11">мигрень и другие типы головной боли</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="12" id="issue-12">
+                      <label class="form-check-label" for="issue-12">климактерические симптомы</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="13" id="issue-13">
+                      <label class="form-check-label" for="issue-13">метаболические расстройства</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="14" id="issue-14">
+                      <label class="form-check-label" for="issue-14">хроническая боль</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="15" id="issue-15">
+                      <label class="form-check-label" for="issue-15">воспаления</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="16" id="issue-16">
+                      <label class="form-check-label" for="issue-16">высокое кровяное давление</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="17" id="issue-17">
+                      <label class="form-check-label" for="issue-17">аутоиммунные расстройства</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="18" id="issue-18">
+                      <label class="form-check-label" for="issue-18">депрессия</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="19" id="issue-19">
+                      <label class="form-check-label" for="issue-19">СРК (синдром раздраженного кишечника)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="20" id="issue-20">
+                      <label class="form-check-label" for="issue-20">колит</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="21" id="issue-21">
+                      <label class="form-check-label" for="issue-21">воспалительное заболевание кишечника</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="22" id="issue-22">
+                      <label class="form-check-label" for="issue-22">заболевания печени</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="23" id="issue-23">
+                      <label class="form-check-label" for="issue-23">ПТСР (посттравматическое стрессовое расстройство)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="24" id="issue-24">
+                      <label class="form-check-label" for="issue-24">болезнь Лайма</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="25" id="issue-25">
+                      <label class="form-check-label" for="issue-25">фибромиалгия</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="26" id="issue-26">
+                      <label class="form-check-label" for="issue-26">ревматоидный артрит</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="27" id="issue-27">
+                      <label class="form-check-label" for="issue-27">рассеянный склероз</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="28" id="issue-28">
+                      <label class="form-check-label" for="issue-28">аутизм</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="29" id="issue-29">
+                      <label class="form-check-label" for="issue-29">болезнь Крона</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="30" id="issue-30">
+                      <label class="form-check-label" for="issue-30">онкология</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="31" id="issue-31">
+                      <label class="form-check-label" for="issue-31">эпилепсия</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="32" id="issue-32">
+                      <label class="form-check-label" for="issue-32">болезнь Паркинсона</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="33" id="issue-33">
+                      <label class="form-check-label" for="issue-33">болезнь Альцгеймера</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+            <button type="button" class="btn btn-primary" onclick="fillIssuesInput()">Применить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

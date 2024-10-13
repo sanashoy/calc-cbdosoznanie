@@ -1,0 +1,143 @@
+body > * {
+    font-family: "Roboto Mono", monospace !important;
+}
+
+.modal {
+    font-family: "Roboto Mono", monospace !important;
+    --bs-modal-width: 75%;
+}
+
+.btn {
+    font-family: "Roboto Mono", monospace !important;
+}
+
+.btn:hover {
+    --bs-btn-hover-border-color: white;
+}
+
+/* original select style */
+select {
+    border: 1px solid !important;
+    border-radius: 0 !important;
+    height: 2.5rem !important;
+    color: black !important;
+    appearance: none !important;
+}
+
+.form-select:focus {
+    box-shadow: none !important;
+}
+
+option {
+    font-family: "Roboto Mono", monospace !important;
+    appearance: none;
+}
+
+option:active {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-color: black !important;
+    font-size: larger;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+}
+
+#form > div > label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#form > div > input {
+    padding-left: .5rem;
+}
+
+
+
+input {
+    height: 2.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid;
+    color: black !important;
+}
+
+hr {
+    border: black 5px solid;
+}
+
+@media (max-width: 768px) {
+    .block {
+        margin-bottom: 1rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .calc.block {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 340px) {
+    .calc-head {
+        flex-direction: column;
+    }
+}
+
+.calc {
+    border: black 1px solid;
+}
+
+.calc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc-header {
+    margin: 0;
+}
+
+.logo {
+    height: 60px;
+    float: right;
+}
+
+.calc-button {
+    margin-top: 1rem;
+    height: 2.5rem;
+    background-color: black;
+    color: white !important;
+}
+
+.calc-button:active {
+    background-color: white !important;
+    color: black !important;
+}
+
+#recomend {
+    padding-top: 0.75rem;
+    border-top: black 1px solid;
+}
+
+.btn-primary {
+    background-color: black !important;
+    color: white;
+    border-color: white;;
+}

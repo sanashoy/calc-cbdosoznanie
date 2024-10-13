@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-family: Montserrat-ExtraBold, Montserrat;
+        font-size: 55px;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-5 {
+        stroke-width: 3px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-6 {
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <g id="line">
+    <polyline class="cls-5" points="210.5 346.5 311.5 104.5 423.5 341.5"/>
+    <polyline class="cls-5" points="415 354 308.5 569.5 210 343"/>
+    <line class="cls-5" x1="311.5" y1="104.5" x2="308.5" y2="569.5"/>
+    <polyline class="cls-5" points="130.5 340.5 311.5 104.5 476.5 332.5"/>
+    <polyline class="cls-5" points="476.5 332.5 308.5 569.5 130.5 340.5"/>
+    <line class="cls-6" x1="311.5" y1="14.5" x2="311.5" y2="62.19"/>
+    <line class="cls-6" x1="416.02" y1="43.98" x2="390.98" y2="85.52"/>
+    <line class="cls-6" x1="494.28" y1="124.24" x2="452.72" y2="149.26"/>
+    <line class="cls-6" x1="522.75" y1="232.42" x2="474.25" y2="233.08"/>
+    <line class="cls-6" x1="207.23" y1="43.98" x2="232.27" y2="85.52"/>
+    <line class="cls-6" x1="128.97" y1="124.24" x2="170.52" y2="149.26"/>
+    <line class="cls-6" x1="100.5" y1="232.42" x2="149" y2="233.08"/>
+  </g>
+  <g id="text">
+    <rect class="cls-2" x="93.15" y="299.66" width="434" height="108" rx="17.24" ry="17.24"/>
+    <text class="cls-3" transform="translate(117.95 373.29)"><tspan x="0" y="0">О</tspan><tspan class="cls-1" x="46.14" y="0">С</tspan><tspan class="cls-4" x="85.52" y="0">О</tspan><tspan x="130.57" y="0">ЗНАНИЕ</tspan></text>
+  </g>
+</svg>
